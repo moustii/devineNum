@@ -2,19 +2,13 @@
 // Pour pouvoir acceder à la variable glabale
 session_start();
 
-if(!isset($_SESSION["aleatoire"])) {
+if(!isset($_SESSION["aleatoire"]) && ["essai"]) {
     $_SESSION["aleatoire"] = rand(1, 100);
-}
-
-if(!isset($_SESSION["essai"])) {
     $_SESSION["essai"] = 0;
 }
 
-var_dump($_SESSION);
-
 $nombre;
 $status = "";
-
 
 // comparaison nombre saisie et nombre voulue
 if (isset($_GET["chiffre"])){
@@ -30,6 +24,7 @@ if (isset($_GET["chiffre"])){
             break;
         case $nombre === $_SESSION["aleatoire"] :
             $status .= "<mark> Well done ! </mark>";
+            $_SESSION["essai"]++;
             session_destroy();
             break;
         default :
@@ -71,7 +66,6 @@ if (isset($_GET["chiffre"])){
     <p style="text-align: center; color: 1d1d1d"><?php if(isset($_GET["chiffre"])){ echo $_GET["chiffre"] . " : " . $status;} ?></p>
     <p style="text-align: center; color: 1d1d1d"><?= "nombre d'essai : " . $_SESSION["essai"] ?></p>
     
-
 </div>
 
 
