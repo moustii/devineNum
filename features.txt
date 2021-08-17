@@ -1,3 +1,4 @@
 - afficher le nombre d'essaies => DONE
-- afficher les anciennes saisies
-- limiter les essaies
+- afficher les anciennes saisies => DONE
+- limiter les essaies => DONE
+- faire des functions
