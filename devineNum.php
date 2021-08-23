@@ -10,7 +10,6 @@ if(!isset($_SESSION["aleatoire"]) && ["essai"] && ["nombres"]) {
 
 $nombre;
 $status = "";
-echo $_SESSION["aleatoire"];
 
 // comparaison nombre saisie et nombre voulue
 if($_SESSION["essai"] < 9) {
